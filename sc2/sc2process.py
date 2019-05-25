@@ -97,6 +97,8 @@ class SC2Process:
         if logger.getEffectiveLevel() <= logging.DEBUG:
             args.append("-verbose")
 
+        os.environ['PATH'] = os.environ['PATH'] + ";" + str(Paths.CWD)
+
         return subprocess.Popen(
             args,
             cwd=(str(Paths.CWD) if Paths.CWD else None),
