@@ -169,7 +169,7 @@ class GameState:
         # Set of enemy units detected by own sensor tower, as blips have less unit information than normal visible units
         self.blips: Set[Blip] = {Blip(unit) for unit in self._blipUnits}
         # self.visibility[point]: 0=Hidden, 1=Fogged, 2=Visible
-        self.visibility: PixelMap = PixelMap(self.observation_raw.map_state.visibility, mirrored=True)
+        self.visibility: PixelMap = PixelMap(self.observation_raw.map_state.visibility, mirrored=False)
         # self.creep[point]: 0=No creep, 1=creep
         self.creep: PixelMap = PixelMap(self.observation_raw.map_state.creep, in_bits=True, mirrored=True)
 
